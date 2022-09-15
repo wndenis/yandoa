@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  yandoa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yandoa
+    hostname: yandoa
+    image: yandoa
+    ports:
+      - 80:80
+    restart: always  # or on-failure
+    volumes:
+      - ./yandoa:/yandoa
+    environment:
+      DB_NAME: "sqlite:////yandoa/yandoa_data.db"
