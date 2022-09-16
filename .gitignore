@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/app/expected.json
+/app/response.json
+/mongo/
+/mongo_data/

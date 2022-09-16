@@ -11,7 +11,18 @@ services:
     ports:
       - 80:80
     restart: always  # or on-failure
-    volumes:
-      - ./yandoa:/yandoa
     environment:
-      DB_NAME: "sqlite:////yandoa/yandoa_data.db"
+      MONGO_USER: "admin"
+      MONGO_PASS: "master"
+      MONGO_HOST: "mongo"
+  mongo:
+    image: mongo:6.0.1
+    container_name: mongo
+    hostname: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: master
