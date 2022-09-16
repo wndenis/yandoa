@@ -14,6 +14,8 @@ Backend school task
 * Every request field is validated using Pydantic
 * Additional validations are implemented (e.g. check if parent document exists)
 * Carefully deals with timestamps
+* Auto-documented according to openapi.yaml provided
+  * Access docs here: `http://base_url/docs`
 
 To run, execute in this directory: `docker-compose up -d`  
 
